@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!--Other Scripts-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+
+    <!--Date Picker-->
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
+    <title>Patient Details</title>
+</head>
+
+<body style="background: #F1F7FF;">
+    <div class="container">
+        <div class="row justify-content-around">
+            <div class="col-md-7"
+                style="margin-top: 10px; background: #FFFFFF;border-radius: 10px;font-weight: 600 !important;padding: 2em;font-family: Nunito;font-style: normal;">
+                <h4 style="font-weight: 600;border-bottom: 1px solid #808080">Patient Details</h4>
+                <div>
+                    <div class="row" style="font-size: smaller !important;">
+                        <div class="col-sm-8">
+                            Information
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    Name
+                                </div>
+                                <div class="col-sm-5">
+                                    Patient Name
+                                </div>
+                                <div class="col-sm-5">
+                                    Age
+                                </div>
+                                <div class="col-sm-5">
+                                    00
+                                </div>
+                                <div class="col-sm-5">
+                                    Mobile
+                                </div>
+                                <div class="col-sm-5">
+                                    ##########
+                                </div>
+                                <div class="col-sm-5">
+                                    Gender
+                                </div>
+                                <div class="col-sm-5">
+                                    Gender
+                                </div>
+                                <div class="col-sm-5">
+                                    Address
+                                </div>
+                                <div class="col-sm-5">
+                                    Lorem Ipsum
+                                </div>
+                                <div class="col-sm-2">
+                                    <button type="button" class="btn btn-light"
+                                        style="width: 100%;font-size: smaller;">Edit</button>
+                                </div>
+                                <div class="col-sm-5">
+                                    <button type="button" class="btn btn-primary"
+                                        style="width: 80%;font-size: smaller;">Change
+                                        Patient</button>
+                                </div>
+                                <div class="col-sm-5">
+                                    <button class="btn btn-primary"
+                                        style="width: 80%;font-size: smaller;margin-left: auto;">Add
+                                        Patient</button>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            Test selected
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" style="margin-top: 10px; background: #FFFFFF;border-radius: 10px;font-weight: 600;padding: 1em;font-family: Nunito;font-size: 1em;
+            font-style: normal;">
+                <div class="lab" style="margin-top: 10px;font-size: 18px;">
+                    Laboratory</div>
+                <br>
+                Sample Pickup
+                <br>
+                <form class="form-inline" action="" style="margin-top: 10px;">
+                    <label for="datepicker">Date</label>
+                    <input id="datepicker" width="40%" style="margin-left:5px ;" />
+                    <label for=""></label>
+                </form>
+                <div class="lab" style="margin-top: 10px;border-bottom: 1px solid #808080;">
+                    Billing Info</div>
+                <div style="margin-top: 10px;">
+                    Test Price 1
+                    <br>
+                    Test Price 2
+                    <div style="border-bottom: 1px solid #808080;">Package Price </div>
+                    Total Price
+                    <br>
+                    Delivery Charge
+
+                    <div style="border-bottom: 1px solid #808080;">Membership Discount </div>
+                    Total Amount
+                </div>
+                <div style="text-align: center;margin-top: 10px;">
+                    <button style="width: 80%; background: #141B41;
+                    border-radius: 5px;" class="btn btn-primary">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script>
+        $('#datepicker').datepicker({
+            uiLibrary: 'bootstrap4'
+        });
+    </script>
+</body>
+
+</html>
