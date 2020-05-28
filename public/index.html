@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+</head>
+
+<body>
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyAUag5Tm_95_OLPn3EGnaQ36J_OPkoPbdo",
+            authDomain: "todoapp-39e7d.firebaseapp.com",
+            databaseURL: "https://todoapp-39e7d.firebaseio.com",
+            projectId: "todoapp-39e7d",
+            storageBucket: "todoapp-39e7d.appspot.com",
+            messagingSenderId: "467637698863",
+            appId: "1:467637698863:web:db8bdcd177a488b58821da",
+            measurementId: "G-MC6DHBX4TL"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <div>
+        email
+        <input type="text" name="email" id="email">
+        <br>
+        password
+        <input type="password" name="password" id="password">
+        <input type="button" name="signup" id="signup" value="Signup">
+        <input type="button" name="verifyemail" id="verifyemail" value="Verify">
+        <input type="button" name="login" id="login" value="login">
+        <input type="button" name="logout" id="logout" value="Log Out" style="display: none;">
+    </div>
+    <div>
+        <h1 id="message"></h1>
+        <h2 id="verify"></h2>
+    </div>
+
+    <script>
+        document.getElementById('signup').addEventListener('click', () => {
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                if (error) {
+                    document.getElementById('message').innerHTML = "Error:" + errorCode + errorMessage;
+                }
+            });
+        });
+
+        document.getElementById('login').addEventListener('click', () => {
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                if (error) {
+                    document.getElementById('message').innerHTML = "Error:" + errorCode + errorMessage;
+                }
+            });
+        });
+
+        var actionCodeSettings = {
+            // URL you want to redirect back to. The domain (www.example.com) for this
+            // URL must be whitelisted in the Firebase Console.
+            url: '120.0.0.1:5500/public/index.html',
+            // This must be true.
+            handleCodeInApp: true,
+            iOS: {
+                bundleId: 'com.example.ios'
+            },
+            android: {
+                packageName: 'com.example.android',
+                installApp: true,
+                minimumVersion: '12'
+            },
+            dynamicLinkDomain: 'example.page.link'
+        };
+
+        document.getElementById('verifyemail').addEventListener('click', () => {
+            var email = document.getElementById('email').value;
+            firebase.auth().sendSignInLinkToEmail(email, actionCodeSettings)
+                .then(function () {
+                    // The link was successfully sent. Inform the user.
+                    // Save the email locally so you don't need to ask the user for it again
+                    // if they open the link on the same device.
+                    window.localStorage.setItem('emailForSignIn', email);
+                })
+                .catch(function (error) {
+                    // Some error occurred, you can inspect the code: error.code
+                });
+        })
+
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                document.getElementById('message').innerHTML = "Hello " + user.email + " You are Logged in";
+                document.getElementById('logout').style.display = "block";
+                document.getElementById('verify').innerHTML = "Verfied: " + user.emailVerified;
+            } else {
+                document.getElementById('logout').style.display = "none";
+            }
+        });
+
+        document.getElementById('logout').addEventListener('click', () => {
+            firebase.auth().signOut().then(function () {
+                document.getElementById('message').innerHTML = "";
+                // Sign-out successful.
+            }).catch(function (error) {
+                // An error happened.
+            });
+        })
+    </script>
+</body>
+
+</html>
