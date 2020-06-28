@@ -1,129 +1,239 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Main</title>
+   <title>
+      Diagnostic Package
+   </title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+   <style>
+      body {
+         background-color: #141B41;
+      }
 
-    <style>
-        nav {
-            padding: 20px 0 0 0 !important;
-        }
+      hr {
+         height: 0.5px;
+         border-width: 0;
+         background-color: #EBEBEB;
+      }
 
-        .section {
-            padding: 1em;
-            background: white;
-        }
+      .inner-bar-line {
+         margin-top: -10px;
+      }
 
-        .container {
-            background: #141B41;
-            min-height: 700px;
-        }
+      .left-pane {
+         background-color: #FF8900;
+      }
 
-        .navbar-dark {
-            color: white;
-            background: #141B41;
-        }
+      .right-pane {
+         background-color: white;
+         color: #142B41;
+      }
 
-        .nav-link {
-            color: white !important;
-            padding: 0.5rem 2rem 0.5rem 2rem !important;
-        }
+      a {
+         color: #141B41;
+      }
 
-        .active .nav-link {
-            color: #141B41 !important;
-            background: white;
-            border-top-left-radius: 6px;
-            border-top-right-radius: 6px;
-        }
+      .create {
+         background-color: #FF8900;
+      }
 
-        .top-part {
-            margin-top: 20px;
-        }
+      .create:hover {
+         background-color: #FF8900;
+      }
 
-        .top-part .col-sm-3 {
-            margin: 10px !important;
-            padding: 2rem;
-            box-shadow: rgba(97, 97, 97, 0.308) 2px 2px 10px !important;
-        }
-    </style>
+      .left-items:hover {
+         background-color: #141B41;
+         color: #fff;
+         text-decoration: none;
+         padding-right: 20px;
+      }
 
+      .titlebar {
+         background-color: #141B41;
+
+      }
+
+      .title-item {
+         margin-right: 30px;
+         color: #fff;
+      }
+
+      .title-item:hover {
+         color: #fff;
+      }
+
+      .tests-and-labs {
+         font-size: 36px;
+      }
+
+      .inner-bar {
+         margin-right: 14px;
+      }
+
+      .inner-bar:hover {
+         color: #141B41;
+      }
+
+      .add-lab {
+         margin-bottom: 120px;
+      }
+
+      .addLab {
+         font-size: 24px;
+      }
+
+      .inner-link {
+         border-bottom: 1px solid #114411;
+      }
+
+      .form-control {
+         background-color: #F5F9FF;
+      }
+
+      .testListArea {
+         background-color: #F5F9FF;
+         border-radius: 5px;
+         box-sizing: border-box;
+         border: 1px solid rgb(212, 213, 214);
+         width: 186px;
+         height: 229px;
+         margin-left: 14px;
+      }
+
+      @media only screen and (max-width: 600px) {
+
+         /* For mobile phones: */
+         [class*="tas"] {
+            font-size: 7px;
+            margin-right: 1px;
+         }
+      }
+
+      @media (min-width: 600px) and (max-width: 992px) {
+         [class*="tas"] {
+            font-size: 13px;
+            margin-right: 1px;
+         }
+      }
+
+      .section {
+         padding: 1em;
+         background: white;
+      }
+
+      .top-part {
+         margin-top: 20px;
+      }
+
+      .top-part .col-sm-3 {
+         margin: 10px !important;
+         padding: 2rem;
+         box-shadow: rgba(97, 97, 97, 0.308) 2px 2px 10px !important;
+      }
+   </style>
 </head>
 
 <body>
-    <div class="container">
-        <nav class="navbar navbar-expand-md navbar-dark">
-            <button class=" navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">DIAGNOSTICS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">APPOINTMENT</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">PHARMACEUTICAL</a>
-                    </li>
-                </ul>
+   <div class="container mt-lg-5">
+      <div class="row">
+         <div class="col-12 col-lg-2 rounded left-pane mt-lg-5 pb-3 px-2 pt-2">
+            <nav class="navbar navbar-expand-md navbar-light">
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="nav flex-column">
+                     <li class="nav-item ">
+                        <a href="#" class="left-items">
+                           <div class="col-12 left-items rounded">Dashboard</div>
+                        </a>
+                     </li>
+                     <li class="nav-item">
+                        <a href="#" class="left-items">
+                           <div class="col-12 mt-sm-1 left-items rounded">Tests and Labs</div>
+                        </a>
+                     </li>
+                     <li class="nav-item">
+                        <a href="#" class="left-items">
+                           <div class="col-12 mt-sm-1 left-items rounded">Phebotomist</div>
+                        </a>
+                     </li>
+                  </ul>
+               </div>
+            </nav>
+         </div>
+         <div class="col-xs-12 col-lg-9">
+            <nav class="navbar navbar-expand-sm navbar-dark titlebar">
+               <ul class="nav nav-tabs" id="myTab" role="tablist">
+                  <li class="nav-item">
+                     <a class="nav-link active title-item tas" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                        aria-controls="home" aria-selected="true">HOME</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link title-item tas" id="diagnostics-tab" data-toggle="tab" href="#diagnostics"
+                        role="tab" aria-controls="diagnotics" aria-selected="false">DIAGNOSTICS</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link title-item tas" id="appointment-tab" data-toggle="tab" href="#appointment"
+                        role="tab" aria-controls="appointment" aria-selected="false">APPOINTMENT</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link title-item tas" id="pharmaceutical-tab" data-toggle="tab" href="#pharmaceutical"
+                        role="tab" aria-controls="pharmaceutical" aria-selected="false">PHARMACEUTICAL</a>
+                  </li>
+               </ul>
+            </nav>
+            <div class="w-100"></div>
+            <div class="row">
+               <div class="col-sm-12 ml-lg-3 right-pane rounded mt-n3">
+                  <div class="section">
+                     <div class="row top-part">
+                        <div class="col-sm-3">
+                           <h5>Total User</h5>
+                        </div>
+                        <div class="col-sm-3">
+                           <h5>Online User</h5>
+                        </div>
+                        <div class="col-sm-3">
+                           <h5>Offline User</h5>
+                        </div>
+                        <div class="col-sm-3">
+                           <h5>Single Membership</h5>
+                        </div>
+                        <div class="col-sm-3">
+                           <h5>Family Membership</h5>
+                        </div>
+                     </div>
+                     <div class="row top-part">
+                        <div class="col-sm-3">
+                           <h5>Biolege Visit</h5>
+                        </div>
+                        <div class="col-sm-3">
+                           <h5>Average Time Spent</h5>
+                        </div>
+                        <div class="col-sm-3">
+                           <h5>Convertion</h5>
+                        </div>
+                        <div class="col-sm-3">
+                           <h5>App Download</h5>
+                        </div>
+                     </div>
+                  </div>
+
+               </div>
             </div>
-        </nav>
-
-
-        <div class="section">
-            <div class="row top-part">
-                <div class="col-sm-3">
-                    <h5>Total User</h5>
-                </div>
-                <div class="col-sm-3">
-                    <h5>Online User</h5>
-                </div>
-                <div class="col-sm-3">
-                    <h5>Offline User</h5>
-                </div>
-                <div class="col-sm-3">
-                    <h5>Single Membership</h5>
-                </div>
-                <div class="col-sm-3">
-                    <h5>Family Membership</h5>
-                </div>
-            </div>
-            <div class="row top-part">
-                <div class="col-sm-3">
-                    <h5>Biolege Visit</h5>
-                </div>
-                <div class="col-sm-3">
-                    <h5>Average Time Spent</h5>
-                </div>
-                <div class="col-sm-3">
-                    <h5>Convertion</h5>
-                </div>
-                <div class="col-sm-3">
-                    <h5>App Download</h5>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-
+         </div>
+      </div>
+   </div>
 </body>
 
 </html>
